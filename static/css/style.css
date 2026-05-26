@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap');
+
+:root {
+    --red: #e73b34;
+    --yellow: #f2d400;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--red);
+    color: var(--white);
+    font-family: 'Montserrat', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    height: 80px;
+    justify-content: space-between;
+    left: 0;
+    padding: 0 40px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 50;
+}
+
+.logo {
+    border: 2px solid var(--white);
+    border-radius: 100px;
+    cursor: pointer;
+    height: 80px;
+    margin-top: 50px;
+    width: auto;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    gap: 28px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+nav a {
+    color: var(--white);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+section {
+    padding: 80px 6vw;
+}
+
+section h2 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+section p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 70ch;
+}
+
+
