@@ -1,0 +1,85 @@
+{
+  "Paneer Inferno": {
+    "price": 22,
+    "category": "Vegetarian",
+    "image": "images/paneer-inferno.png",
+    "description": "Spicy paneer, onions, jalapeños, mozzarella, and makhani drizzle."
+  },
+
+  "Veggie Slingshot": {
+    "price": 20,
+    "category": "Vegetarian",
+    "image": "images/veggie-slingshot.png",
+    "description": "Capsicum, onions, olives, corn, mozzarella."
+  },
+
+  "Makhani Blaze": {
+    "price": 23,
+    "category": "Vegetarian",
+    "image": "images/makhani-blaze.png",
+    "description": "Creamy makhani sauce, paneer cubes, coriander, cheese."
+  },
+
+  "Garden Supreme": {
+    "price": 20,
+    "category": "Vegan",
+    "image": "images/garden-supreme.png",
+    "description": "Bell peppers, olives, onions, mushrooms, vegan cheese."
+  },
+
+  "Corn & Pesto Crush": {
+    "price": 21,
+    "category": "Vegetarian",
+    "image": "images/corn-pesto-crush.png",
+    "description": "Sweet corn, pesto sauce, garlic, mozzarella."
+  },
+
+  "Peri Peri Paneer": {
+    "price": 24,
+    "category": "Vegetarian",
+    "image": "images/peri-peri-paneer.png",
+    "description": "Peri peri paneer, onions, capsicum, spicy mayo drizzle."
+  },
+
+  "Veg Mazzama": {
+    "price": 22,
+    "category": "Vegetarian",
+    "image": "images/veg-mazzama.png",
+    "description": "Paneer, jalapeños, onions, mushrooms, mozzarella overload."
+  },
+
+  "Spicy Corn Delight": {
+    "price": 19,
+    "category": "Vegetarian",
+    "image": "images/spicy-corn-delight.png",
+    "description": "Corn, chili flakes, capsicum, garlic, cheese blend."
+  },
+
+  "Tandoori Garden": {
+    "price": 23,
+    "category": "Vegetarian",
+    "image": "images/tandoori-garden.png",
+    "description": "Tandoori sauce, paneer, onions, coriander, mozzarella."
+  },
+
+  "Vegetarian Stingers": {
+    "price": 22,
+    "category": "Vegetarian",
+    "image": "images/vegetarian-stingers.png",
+    "description": "Veg mix with jalapeños and spicy garlic drizzle."
+  },
+
+  "Cheese Lovers Deluxe": {
+    "price": 21,
+    "category": "Vegetarian",
+    "image": "images/cheese-lovers-deluxe.png",
+    "description": "Four cheese blend with herbs and roasted garlic."
+  },
+
+  "Loaded Veggie Crunch": {
+    "price": 24,
+    "category": "Vegetarian",
+    "image": "images/loaded-veggie-crunch.png",
+    "description": "Crunchy veggies, paneer, olives, onions, extra cheese."
+  }
+}
