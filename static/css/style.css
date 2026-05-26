@@ -95,8 +95,8 @@ section p {
 }
 
 #menu h1 {
-    color: var(--white);
-    font-size: clamp(5rem, 16vw, 18rem);
+    color: white;
+    font-size: clamp(4rem, 13vw, 16rem);
     font-weight: 900;
     letter-spacing: -6px;
     line-height: 0.85;
@@ -142,6 +142,54 @@ section p {
     font-weight: 800;
     padding: 12px 22px;
     text-decoration: none;
+}
+footer {
+    background: #111;
+    color: #b9b9b9;
+    padding: 90px 6vw 40px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1.2fr 1fr auto;
+    gap: 60px;
+    align-items: start;
+}
+
+.footer-brand h2 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 25px;
+    letter-spacing: -2px;
+}
+
+.footer-brand p {
+    color: #a5a5a5;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer-column h4 {
+    color: #ffe600;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.footer-column a,
+.footer-column p {
+    color: #a5a5a5;
+    display: block;
+    font-size: 1.05rem;
+    line-height: 2;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: white;
 }
 
 @media (max-width: 900px) {
