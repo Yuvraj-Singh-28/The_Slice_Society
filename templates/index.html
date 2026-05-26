@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Home - The Slice Society{% endblock %}
+
+{% block content %}
+<section id="menu">
+    <p>Introducing</p>
+    <h1>The Slice Society</h1>
+
+    <img src="{{ url_for('static', filename='images/Main_pizza.png') }}" alt="Slices of pizza">
+
+    <p>Current selection</p>
+    <h2>Diavola Supreme</h2>
+
+    <a href="#cart">View cart</a>
+</section>
+
+<section id="story">
+    <h2>History</h2>
+    <p>Add your restaurant story here.</p>
+</section>
+
+<section id="locations">
+    <h2>Locations</h2>
+    <p>Add store locations here.</p>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Add contact details here.</p>
+</section>
+{% endblock %}
