@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/index.js",
             "outFiles": [
-                "${workspaceFolder}/data/flower.json"
+                "${workspaceFolder}/data/pizza.json"
             ]
         }
     ]
