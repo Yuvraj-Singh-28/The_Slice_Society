@@ -1,8 +1,29 @@
 {% extends "base.html" %}
 
-{% block title %}Home - The Slice Society{% endblock %}
+{% block title %}Menu - The Slice Society{% endblock %}
 
 {% block content %}
+<section id="menu-section">
+    <h1>Our Menu</h1>
+    <p>Explore our delicious collection of artisan pizzas</p>
+    
+    <div class="pizza-grid">
+        {% for pizza_name, pizza_data in pizzas.items() %}
+        <div class="pizza-card">
+            <div class="pizza-image-container">
+                <img src="{{ url_for('static', filename=pizza_data.image) }}" alt="{{ pizza_name }}" class="pizza-image">
+            </div>
+              <button type="submit" class="add-to-cart-btn">Add to cart</button>
 
-
-
+            <div class="pizza-info">
+                <span class="pizza-arrow" aria-hidden="true"></span>
+                <h3>{{ pizza_name }}</h3>
+                <p class="price">${{ pizza_data.price }}</p>
+                <p class="category">{{ pizza_data.category }}</p>
+                <p class="description">{{ pizza_data.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
