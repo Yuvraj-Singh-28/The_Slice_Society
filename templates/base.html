@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}The Slice Society{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Include Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 <body>
     <header>
-        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="The Slice Society Logo" class="logo" href="{{ url_for('index') }}" >
+        <a href="{{ url_for('index') }}">
+            <img src="{{ url_for('static', filename='images/LOGO.png') }}" alt="The Slice Society Logo" class="logo">
+        </a>
 
         <nav>
-            <a href="{{ url_for('index') }}#menu">Menu</a>
+            <a href="{{ url_for('menu') }}">Menu</a>
             <a href="{{ url_for('index') }}#story">History</a>
             <a href="{{ url_for('index') }}#locations">Locations</a>
             <a href="{{ url_for('index') }}#contact">Contact</a>
+
+            <i class="fa-solid fa-cart-shopping"></i>
             
         </nav>
     </header>
