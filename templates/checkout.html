@@ -48,7 +48,36 @@
             </form>
         </div>
         
-        
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            
+            <div class="order-items">
+                {% for item in cart_items %}
+                <div class="order-item">
+                    <span>{{ item.name }}</span>
+                    <span>${{ item.price }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <hr>
+            
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span>${{ "%.2f"|format(total) }}</span>
+            </div>
+            <div class="summary-row">
+                <span>Tax (15%):</span>
+                <span>${{ "%.2f"|format(total * 0.15) }}</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total:</span>
+                <span>${{ "%.2f"|format(total * 1.15) }}</span>
+            </div>
+            
+            <button type="submit" form="checkout-form" class="place-order-btn">Place Order</button>
+            <a href="{{ url_for('cart') }}" class="back-to-cart-btn">Back to Cart</a>
+        </div>
     </div>
 </section>
 {% endblock %}
