@@ -5,27 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}The Slice Society{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- Include Font Awesome CDN -->
-  <link rel="stylesheet" href="https://cloudflare.com">
+    <script src="{{ url_for('static', filename='javascript/script.js') }}" defer></script>
+
 </head>
 <body>
-    <header>
-        <a href="{{ url_for('index') }}">
+    <header class="site-header">
+        <a href="{{ url_for('index') }}" class="logo-link" aria-label="The Slice Society home">
             <img src="{{ url_for('static', filename='images/LOGO.png') }}" alt="The Slice Society Logo" class="logo">
         </a>
 
-        <nav>
+        <nav class="site-nav" aria-label="Main navigation">
             <a href="{{ url_for('menu') }}">Menu</a>
             <a href="{{ url_for('index') }}#story">History</a>
             <a href="{{ url_for('index') }}#locations">Locations</a>
             <a href="{{ url_for('index') }}#contact">Contact</a>
-
-            <i class="fa-solid fa-cart-shopping"></i>
-            
+            <a href="{{ url_for('cart') }}" class="cart-link" aria-label="Cart">Cart</a>
         </nav>
     </header>
 
     <main>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="flash-messages">
+                    {% for message in messages %}
+                        <div class="flash-message">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
         {% block content %}{% endblock %}
     </main>
 

@@ -13,7 +13,11 @@
             <div class="pizza-image-container">
                 <img src="{{ url_for('static', filename=pizza_data.image) }}" alt="{{ pizza_name }}" class="pizza-image">
             </div>
-              <button type="submit" class="add-to-cart-btn">Add to cart</button>
+            <form method="POST" action="{{ url_for('add_to_cart') }}" class="add-to-cart-form">
+                <input type="hidden" name="pizza_name" value="{{ pizza_name }}">
+                <input type="hidden" name="pizza_price" value="{{ pizza_data.price }}">
+                <button type="submit" class="add-to-cart-btn">Add to cart</button>
+            </form>
 
             <div class="pizza-info">
                 <span class="pizza-arrow" aria-hidden="true"></span>

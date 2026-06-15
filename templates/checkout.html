@@ -54,8 +54,8 @@
             <div class="order-items">
                 {% for item in cart_items %}
                 <div class="order-item">
-                    <span>{{ item.name }}</span>
-                    <span>${{ item.price }}</span>
+                    <span>{{ item.name }} x{{ item.quantity }}</span>
+                    <span>${{ "%.2f"|format(item.price * item.quantity) }}</span>
                 </div>
                 {% endfor %}
             </div>
