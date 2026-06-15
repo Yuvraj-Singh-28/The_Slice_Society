@@ -725,6 +725,25 @@ footer {
     color: #111;
 }
 
+.clear-cart-btn {
+    background: rgba(231, 59, 52, 0.8);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    padding: 12px 18px;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.clear-cart-btn:hover {
+    background: var(--red);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.3);
+}
+
 .empty-cart {
     text-align: center;
     padding: 80px 30px;
