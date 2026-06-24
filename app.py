@@ -12,6 +12,10 @@ app.secret_key = 'mysecretkey'
 def index():
     return render_template('index.html')
 
+@app.route('/history')
+def history():
+    return render_template('history.html')
+
 @app.route('/menu')
 def menu():
     with open('data/pizza.json', 'r') as f:
