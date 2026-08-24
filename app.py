@@ -7,7 +7,7 @@ from reportlab.pdfgen import canvas
 app = Flask(__name__)
 app.secret_key = 'mysecretkey'
 
-
+#
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -32,15 +32,15 @@ def cart():
             item['quantity'] = 1
     total = sum(item['price'] * item.get('quantity', 1) for item in cart_items)
     return render_template('cart.html', cart_items=cart_items, total=total)
-
+                                                                                                
 @app.route('/add_to_cart', methods=['POST'])
 def add_to_cart():
     pizza_name = request.form.get('pizza_name')
     pizza_price = request.form.get('pizza_price')
-
+                               
     if 'cart' not in session:
         session['cart'] = []
-
+                 
     # Check if item already exists in cart
     item_found = False
     for item in session['cart']:
