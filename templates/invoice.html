@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+{% block title %}Invoice - The Slice Society{% endblock %}
+
+{% block content %}
+<section id="invoice-section">
+    <div class="invoice-header">
+        <div>
+            <p>Order Confirmed</p>
+            <h1>Invoice</h1>
+        </div>
+        <div class="invoice-actions">
+            <a href="{{ url_for('download_invoice') }}" class="checkout-btn">Download PDF</a>
+            <a href="{{ url_for('menu') }}" class="continue-shopping-btn">Order Again</a>
+        </div>
+    </div>
+
+    <div class="invoice-layout">
+        <div class="invoice-panel">
+            <div class="invoice-meta">
+                <div>
+                    <span>Invoice Number</span>
+                    <strong>{{ invoice['order_number'] }}</strong>
+                </div>
+                <div>
+                    <span>Date</span>
+                    <strong>{{ invoice['created_at'] }}</strong>
+                </div>
+            </div>
+
+            <div class="customer-details">
+                <h2>Delivery Details</h2>
+                <p>{{ invoice['customer']['name'] }}</p>
+                <p>{{ invoice['customer']['email'] }}</p>
+                <p>{{ invoice['customer']['phone'] }}</p>
+                <p>{{ invoice['customer']['address'] }}</p>
+            </div>
+
+            <table class="cart-table invoice-table">
+                <thead>
+                    <tr>
+                        <th>Pizza</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in invoice['items'] %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>${{ "%.2f"|format(item.price) }}</td>
+                        <td>{{ item.quantity }}</td>
+                        <td>${{ "%.2f"|format(item.price * item.quantity) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="order-summary">
+            <h2>Payment Summary</h2>
+            <div class="summary-row">
+                <span>Subtotal:</span>
+                <span>${{ "%.2f"|format(invoice['totals']['subtotal']) }}</span>
+            </div>
+            {% if invoice['totals']['discount'] > 0 %}
+            <div class="summary-row discount-row">
+                <span>Discount {{ invoice['totals']['discount_code'] }}:</span>
+                <span>-${{ "%.2f"|format(invoice['totals']['discount']) }}</span>
+            </div>
+            {% endif %}
+            <div class="summary-row">
+                <span>Tax (15%):</span>
+                <span>${{ "%.2f"|format(invoice['totals']['tax']) }}</span>
+            </div>
+            <div class="summary-row total">
+                <span>Total Paid:</span>
+                <span>${{ "%.2f"|format(invoice['totals']['total']) }}</span>
+            </div>
+            <p class="invoice-note">
+                Thank you for ordering from The Slice Society.
+            </p>
+        </div>
+    </div>
+</section>
+{% endblock %}

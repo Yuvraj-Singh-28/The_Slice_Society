@@ -684,6 +684,56 @@ footer {
     color: var(--yellow);
 }
 
+.discount-row {
+    color: #9cff9c;
+    font-weight: 700;
+}
+
+.discount-form {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 18px;
+    padding-top: 18px;
+}
+
+.discount-form label {
+    color: var(--white);
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.discount-controls {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr auto;
+}
+
+.discount-controls input {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: var(--white);
+    min-width: 0;
+    padding: 10px 12px;
+}
+
+.discount-controls button {
+    background: var(--yellow);
+    border: none;
+    border-radius: 6px;
+    color: #111;
+    cursor: pointer;
+    font-weight: 800;
+    padding: 10px 14px;
+}
+
+.discount-form p {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 0.78rem;
+    margin-top: 8px;
+}
+
 .cart-actions {
     display: flex;
     flex-direction: column;
@@ -921,10 +971,109 @@ footer {
     margin-top: 0;
 }
 
+/* Invoice Section */
+#invoice-section {
+    min-height: 100vh;
+    padding-bottom: 80px;
+    padding-top: 120px;
+}
+
+.invoice-header {
+    align-items: center;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.invoice-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.invoice-header p {
+    color: var(--yellow);
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.invoice-header h1 {
+    color: var(--white);
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    letter-spacing: -1px;
+}
+
+.invoice-layout {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr 380px;
+}
+
+.invoice-panel {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.invoice-meta {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 30px;
+}
+
+.invoice-meta span {
+    color: rgba(255, 255, 255, 0.72);
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.invoice-meta strong {
+    color: var(--yellow);
+    font-size: 1rem;
+}
+
+.customer-details {
+    margin-bottom: 30px;
+}
+
+.customer-details h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+}
+
+.customer-details p,
+.invoice-note {
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
+}
+
+.invoice-table {
+    margin-top: 20px;
+}
+
+/* Orders Section */
+#orders-section {
+    min-height: 100vh;
+    padding-bottom: 80px;
+    padding-top: 120px;
+}
+
+#orders-section h1 {
+    color: var(--white);
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    letter-spacing: -1px;
+    margin-bottom: 40px;
+}
+
 /* Responsive Cart */
 @media (max-width: 768px) {
     .checkout-container,
-    .cart-container {
+    .cart-container,
+    .invoice-layout {
         grid-template-columns: 1fr;
     }
 
@@ -941,6 +1090,21 @@ footer {
     .flash-messages {
         right: 15px;
         left: 15px;
+    }
+
+    .invoice-header,
+    .invoice-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .invoice-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .invoice-actions {
+        flex-direction: column;
+        width: 100%;
     }
 }
 

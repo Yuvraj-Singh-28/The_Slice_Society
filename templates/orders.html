@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Orders - The Slice Society{% endblock %}
+
+{% block content %}
+<section id="orders-section">
+    <h1>Saved Orders</h1>
+
+    {% if orders %}
+    <div class="cart-items">
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Invoice</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Cart</th>
+                    <th>Totals</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                <tr>
+                    <td>{{ order['invoice_number'] }}</td>
+                    <td>{{ order['invoice_date'] }}</td>
+                    <td>{{ order['customer_name'] }}</td>
+                    <td>{{ order['cart'] }}</td>
+                    <td>{{ order['totals'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="empty-cart">
+        <p>No orders have been saved yet.</p>
+        <a href="{{ url_for('menu') }}" class="cta">View Menu</a>
+    </div>
+    {% endif %}
+</section>
+{% endblock %}

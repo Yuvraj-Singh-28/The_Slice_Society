@@ -41,16 +41,37 @@
                 <h2>Order Summary</h2>
                 <div class="summary-row">
                     <span>Subtotal:</span>
-                    <span>${{ "%.2f"|format(total) }}</span>
+                    <span>${{ "%.2f"|format(totals.subtotal) }}</span>
                 </div>
+                {% if totals.discount > 0 %}
+                <div class="summary-row discount-row">
+                    <span>Discount {{ totals.discount_code }}:</span>
+                    <span>-${{ "%.2f"|format(totals.discount) }}</span>
+                </div>
+                {% endif %}
                 <div class="summary-row">
                     <span>Tax:</span>
-                    <span>${{ "%.2f"|format(total * 0.15) }}</span>
+                    <span>${{ "%.2f"|format(totals.tax) }}</span>
                 </div>
                 <div class="summary-row total">
                     <span>Total:</span>
-                    <span>${{ "%.2f"|format(total * 1.15) }}</span>
+                    <span>${{ "%.2f"|format(totals.total) }}</span>
                 </div>
+
+                <form method="POST" action="{{ url_for('apply_discount') }}" class="discount-form">
+                    <label for="discount_code">Discount Code</label>
+                    <div class="discount-controls">
+                        <input
+                            type="text"
+                            id="discount_code"
+                            name="discount_code"
+                            value="{{ totals.discount_code }}"
+                            placeholder="SLICE10"
+                        >
+                        <button type="submit">Apply</button>
+                    </div>
+                    <p>Try SLICE10, STUDENT15, or PIZZA20.</p>
+                </form>
                 
                 <div class="cart-actions">
                     <a href="{{ url_for('checkout') }}" class="checkout-btn">Proceed to Checkout</a>
